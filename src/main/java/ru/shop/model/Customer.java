@@ -1,13 +1,17 @@
 package ru.shop.model;
 
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 
-@Data
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Customer {
-    private UUID id;
-    private String name;
-    private String phone;
-    private int age;
+    UUID id;
+    String name;
+    String phone;
+    long age;
 }

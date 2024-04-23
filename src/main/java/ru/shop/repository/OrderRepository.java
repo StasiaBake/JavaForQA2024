@@ -4,30 +4,27 @@ import ru.shop.model.Order;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
+import java.util.Optional;
 import java.util.UUID;
 
 public class OrderRepository {
-    private final List<Order> orders = new ArrayList<>();
+
+    List<Order> orders = new ArrayList<>();
 
     public void save(Order order) {
         orders.add(order);
     }
 
     public List<Order> findAll() {
-        return new ArrayList<>(orders);
+        return orders;
     }
 
-    public List<Order> findCustomerOrders(UUID customerId) {
-
-        var list = new ArrayList<Order>();
-
+    public Optional<Order> findById(UUID id) {
         for (Order order : orders) {
-            if (Objects.equals(order.getCustomerId(), customerId)) {
-                list.add(order);
+            if (order.getId().equals(id)) {
+                return Optional.of(order);
             }
         }
-
-        return list;
+        return Optional.empty();
     }
 }
