@@ -6,6 +6,6 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/
     username: postgres
-    password: postgres
-    database: postgres[.idea](.idea)
+    password: password
+    database: db
     driverClassname: org.postgresql.Driver
