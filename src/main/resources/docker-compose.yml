@@ -4,8 +4,6 @@ services:
   db:
     image: postgres:10
     command: "-c log_statement=all"
-    volumes:
-      - ./data:/var/lib/postgresql/data
     expose:
       - 5432
     ports:
