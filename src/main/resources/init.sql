@@ -1,4 +1,4 @@
-create table if not exists product
+create table if not exists products
 (
     id           uuid primary key,
     name         varchar not null,
@@ -6,7 +6,7 @@ create table if not exists product
     cost         int     not null
 );
 
-create table if not exists customer
+create table if not exists customers
 (
     id    uuid primary key,
     name  varchar not null,
@@ -14,7 +14,7 @@ create table if not exists customer
     age   int     not null
 );
 
-create table if not exists "order"
+create table if not exists "orders"
 (
     id          uuid primary key,
     customer_id uuid not null references customer (id),

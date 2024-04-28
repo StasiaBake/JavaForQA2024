@@ -13,7 +13,7 @@ import java.util.UUID;
 // Сущности храниться в БД
 @Entity
 // Задаём таблицы для хранения
-@Table(name = "product")
+@Table(name = "products")
 public class Product {
 
     // первичный ключ

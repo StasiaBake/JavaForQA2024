@@ -2,6 +2,7 @@ package ru.shop.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import ru.shop.dto.AddOrderRequest;
 import ru.shop.model.Customer;
 import ru.shop.model.Order;
 import ru.shop.model.Product;
@@ -32,10 +33,10 @@ public class OrderController {
     }
 
     @PostMapping
-    public void save(UUID productId, UUID customerId, int count) {
-        Product product = productService.getById(productId);
-        Customer customer = customerService.getById(customerId);
-        orderService.add(customer, product, count);
+    public void save(@RequestBody AddOrderRequest request) {
+        Product product = productService.getById(request.getProductId());
+        Customer customer = customerService.getById(request.getProductId());
+        orderService.add(customer, product, request.getCount());
     }
 
     @GetMapping("/customer/{customerId}")
