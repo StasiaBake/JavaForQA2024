@@ -32,3 +32,4 @@ replay_pid*
 /build
 **/application-dev-credentials.yml
 /*/allure-results
+/src/main/resources/data
